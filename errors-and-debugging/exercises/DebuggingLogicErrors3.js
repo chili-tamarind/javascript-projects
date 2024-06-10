@@ -26,6 +26,17 @@ if (crewStatus && computerStatus === 'green'){
    launchReady = false;
 }
 
+console.log(launchReady)
+
+/*
+Message is correct
+
+Crew & computer cleared.
+true
+*/
+
+
+
 // if (launchReady) {
 //    console.log('10, 9, 8, 7, 6, 5, 4, 3, 2, 1...');
 //    console.log('Liftoff!');

@@ -30,3 +30,16 @@ if (launchReady) {
 } else {
    console.log('Launch scrubbed.');
 }
+
+/*
+Should not have launched with low fuel.
+
+WARNING: Insufficient fuel!
+
+Crew & computer cleared.
+
+10, 9, 8, 7, 6, 5, 4, 3, 2, 1...
+DebuggingLogicErrors1.js:28
+Liftoff!
+
+*/

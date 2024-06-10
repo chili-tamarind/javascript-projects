@@ -29,6 +29,17 @@ if (crewStatus && computerStatus === 'green'){
 
 console.log("launchReady = ", launchReady);
 
+/*
+
+Incorrect message. crewStatus & computerStatus check makes clears launch. Need to combine all checks.
+
+WARNING: Insufficient fuel!
+launchReady =  false
+Crew & computer cleared.
+launchReady =  true
+*/
+
+
 // if (launchReady) {
 //    console.log('10, 9, 8, 7, 6, 5, 4, 3, 2, 1...');
 //    console.log('Liftoff!');
