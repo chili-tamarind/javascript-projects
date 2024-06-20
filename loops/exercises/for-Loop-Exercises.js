@@ -54,7 +54,7 @@ let arrie = [1, 5, "LC101", "blue", 42];
 console.log("");
 let numero =  [2, 3, 13, 18, -5, 38, -10, 11, 0, 104];
 let evens = [];
-let odds = []; 
+let odds = [];  
 
 for (let i = 0; i < numero.length; i++){
   if (numero[i] % 2 === 0) {

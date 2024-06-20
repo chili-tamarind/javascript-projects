@@ -4,7 +4,7 @@
 
 let starting_fuel_level = 0;
 let astronauts_aboard = 0;
-let shuttle_altitude = 0;
+let shuttle_altitude = 0; 
 
 
 /*Exercise #4: Construct while loops to do the following:
