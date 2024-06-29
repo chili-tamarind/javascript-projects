@@ -21,7 +21,7 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
 
 for (i = 0; i < numMeals; i++) { // For each crew member
     
-    for (j = 0; j <= 4; j++) { // For each type of ingredient
+    for (j = 0; j <= 4; j++) { // For each type of ingredient (pantry.length)
         //my_meal = my_meal.concat(pantry[j][i] + ", ")
         my_meal.push(pantry[j][i])
     }
@@ -34,12 +34,42 @@ for (i = 0; i < numMeals; i++) { // For each crew member
 return meals;
 }
 
+/* If we want to choose random ingredients
+
+for (let i = 0; i < numMeals; i++) {
+    // Initialize a new meal
+        let meal = [];
+     // Loop through each category in the pantry
+    for (let category of pantry) {
+
+// Randomly select an item from the current category
+    let index = Math.floor(Math.random() * category.length);
+    let item = category[index];
+// Add the selected item to the current meal
+    meal.push(item);
+// Remove the selected item from the category to avoid reuse
+    category.splice(index, 1);
+}
+// Add the assembled meal to the meals array
+    meals.push(meal);
+}
+/// Code your solution for part A #2 below this comment (and above the return statement) ... ///
+  return meals;
+} 
+
+*/
+
 // *****************************************
+
 function askForNumber() {
 
     numMeals = input.question("How many meals would you like to make? ");
     
-    /// CODE YOUR SOLUTION TO PART B here ///
+    /* CODE YOUR SOLUTION TO PART B here 
+    Using a while loop, ask the user to select the number of meals to assemble. Validate the input to make sure it is an integer from 1 - 6.
+    Save the result to the numMeals variable returned by the function.
+    Test your solution to this part by returning to the runProgram() function in the file and uncommenting the section labelled for testing Part B. Run node index to see the result.*/
+
     while (!(Number.isInteger(Number(numMeals)) && numMeals >= 1 && numMeals <= 6)) {
         //console.log(Number.isInteger(Number(numMeals)))
         //console.log((numMeals >= 1) === true)
@@ -67,6 +97,7 @@ for (i = 0; i <  min_string; i++){
     
 // Add excess substring to the end
 code = code.concat(`${string1.substring(min_string)}${string2.substring(min_string)}`)  
+// code += `${string1[i]}${string2[i]}`; // Simpler!
 
 return code;
 }
@@ -99,8 +130,6 @@ console.log("Time to run the password generator so we can update the menu tomorr
 console.log(`The new password is: ${generatePassword(password1, password2)}`);
 
 }
-
-runProgram()
 
 // *****************************************
 
