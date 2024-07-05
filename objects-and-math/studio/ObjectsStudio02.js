@@ -34,7 +34,7 @@ function selectRandomEntry(my_array){
 // Code your oxygenExpended function here:
 // The function should take a candidate object as a parameter and NOT the crew array.
 
-function oxygenExpended_1(candidate){  
+function oxygenExpended_1(candidate){  // ORIGINAL
   
   // The spacewalk will last for three orbits around the earth. Use missionDuration to calculate how many hours the spacewalk will take.
   spacewalk_hours = missionDuration(3);
@@ -49,7 +49,7 @@ function oxygenExpended_1(candidate){
 }
 
 
-function oxygenExpended(candidate, orbit_radius, orbit_speed){  
+function oxygenExpended(candidate, orbit_radius, orbit_speed){  // REFACTORED
   
   // We should not restrict our mission to the default values for orbital radius and orbital speed. Refactor oxygenExpended to accept values for these items. Remember to include the values in the missionDuration call.  
 
@@ -109,5 +109,8 @@ let crew = [candidateA,candidateC,candidateE];
 
 
 // When you call oxygenExpended, feel free to use your selectRandomEntry to pick the crew member to pass into the function.
-console.log('\n'+ oxygenExpended_1(selectRandomEntry(crew)))
-console.log('\n'+ oxygenExpended(selectRandomEntry(crew), 3000, 45000))
+console.log('\n*********************************************');
+console.log(oxygenExpended_1(selectRandomEntry(crew)));
+console.log('\n*********************************************');
+console.log(oxygenExpended(selectRandomEntry(crew), 3000, 45000));
+console.log('\n*********************************************');

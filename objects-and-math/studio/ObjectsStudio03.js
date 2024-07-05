@@ -1,3 +1,5 @@
+let massTotal = function(my_crew) {return Number(75000 + crewMass(my_crew))};
+
 // Code your crewMass function here:
 function crewMass(my_crew){
   
@@ -12,10 +14,10 @@ function crewMass(my_crew){
 }
 
 // Code your fuelRequired function here:
-function fuelRequired_1(my_crew){
+function fuelRequired_1(my_crew){ // ORIGINAL
 
   /* The mass of the un-crewed rocket plus the food and other supplies is 75,000 kg. Create a fuelRequired function to combine the rocket and crew masses, then calculate and return the amount of fuel needed to reach LEO. */
-  let mass_total = 75000 + crewMass(my_crew);
+  let mass_total = massTotal(my_crew);
 
   // 9.5 kg of rocket fuel to lift 1 kg of mass into low-earth orbit (LEO)
   let mass_fuel = mass_total*9.5;
@@ -73,13 +75,14 @@ let crew = [candidateB,candidateD,candidateF];
 
 
 // TESTS
-console.log('\nTotal mass: '+ crewMass(crew))
+console.log('\nTotal mass: ', crewMass(crew), ' kg')
 console.log('\n', fuelRequired_1)
-console.log(`The mission has a launch mass of ${crewMass(crew)} kg and requires ${fuelRequired_1(crew)} kg of fuel.`)
+console.log(`The mission has a launch mass of ${massTotal(crew).toLocaleString()} kg and requires ${fuelRequired_1(crew).toLocaleString()} kg of fuel.`)
+//console.log(typeof massTotal(crew))
 
-function fuelRequired(my_crew){
+function fuelRequired(my_crew){ // REFACTORED
 
-  let mass_total = 75000 + crewMass(my_crew);
+  let mass_total = massTotal(my_crew);
   let mass_fuel = mass_total*9.5;
 
   /* Our launch requires a safety margin for the fuel level, especially if the crew members are cute and fuzzy. Add an extra 200 kg of fuel for each dog or cat on board, but only an extra 100 kg for the other species. Update fuelRequired to account for this, then round the final amount of fuel UP to the nearest integer. */
@@ -94,5 +97,6 @@ function fuelRequired(my_crew){
   return stuff = Math.round(mass_fuel);
 }
 
+// https://stackoverflow.com/questions/2901102/how-to-format-a-number-with-commas-as-thousands-separators
 console.log('\n', fuelRequired)
-console.log(`The mission has a launch mass of ${crewMass(crew)} kg (???) and requires ${fuelRequired(crew)} kg of fuel.`)
+console.log(`The mission has a launch mass of ${massTotal(crew).toLocaleString()} kg and requires ${fuelRequired(crew).toLocaleString()} kg of fuel.`)

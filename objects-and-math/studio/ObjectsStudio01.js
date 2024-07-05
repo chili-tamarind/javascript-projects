@@ -15,13 +15,13 @@ function selectRandomEntries(my_array, my_number){
   for (i = 0; i < my_number; i++) {    // For the number of times you want to select a number    
 
     while (entries.includes(selected)) { // Loop until unique number
-      selected = selectRandomEntry(my_array);
-    }
+      selected = selectRandomEntry(my_array);}
   
     entries.push(selected);
   }
 
-  return entries;
+  return entries.sort();
+
 }
 
 
@@ -30,12 +30,15 @@ function buildCrewArray(selected_IDs, candidates) {
 
   let crew = [];
 
- // for (i = 0; i < candidates.length; i++) {    
-    for (candidate in crew) { // Check all candidates
-      if (selected_IDs.includes(candidates[i].astronautID)){ 
-        crew.push(candidates[i].name)} // Add to crew list
-  }
+    for (candidate in candidates) { // Check all candidates
 
+      //let candidates_IDs = candidates.map(value => value.astronautID);
+      
+      if (selected_IDs.includes(candidates[candidate].astronautID)){ // <<<<<<<<< Works but would prefer it organized
+        crew.push(candidates[candidate].name);} // Add to crew list
+    }
+
+  //crew = crew.sort();
   console.log(`${'\n'}${crew.slice(0, crew.length-1)}, and ${crew.slice(-1)} are going to space!`)
   return crew;
 
@@ -92,8 +95,15 @@ let animals = [candidateA,candidateB,candidateC,candidateD,candidateE,candidateF
 // Code your template literal and console.log statements:
 
 candidates_Selected = selectRandomEntries(idNumbers, 3)
-console.log('\nSelected IDs\n--------------\n' + candidates_Selected);
+console.log('\nSelected IDs\n-------------------\n',candidates_Selected,'\n-------------------');
 
+// Print list of animal name & ID
 // https://stackoverflow.com/questions/19590865/from-an-array-of-objects-extract-value-of-a-property-as-array
-console.log('\nAll Animals\n--------------\n' + animals.map(animals => `${animals.name}-${animals.astronautID}`))
-buildCrewArray(candidates_Selected, animals) 
+
+console.log('\nAll Animals\n-------------------')
+let animal_name_ID =  animals.map(animals => `[${animals.astronautID}] ${animals.name}`)
+animal_name_ID = animal_name_ID.sort().join('\n'); 
+console.log(animal_name_ID)
+
+// Run script
+buildCrewArray(candidates_Selected, animals)
