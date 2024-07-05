@@ -1,3 +1,5 @@
+// npm install
+
 //Import modules:
 const input = require('readline-sync');                       //Import readline-sync
 const averages = require('./ScoreCalcs/averages.js');         //Import functions from averages.js
