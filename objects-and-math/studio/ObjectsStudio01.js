@@ -2,7 +2,7 @@
 
 function selectRandomEntry(my_array){
 
-  my_number = my_array[Math.floor(Math.random()*my_array.length)];
+  let my_number = my_array[Math.floor(Math.random()*my_array.length)];
   return my_number;
 }
 

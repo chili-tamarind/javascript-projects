@@ -36,6 +36,4 @@ launchOutput : function launchOutput(num) {
     }
 }
 
-
-
 module.exports = launchcode;

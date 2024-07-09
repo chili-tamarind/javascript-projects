@@ -21,10 +21,11 @@ for (let i = 0; i < prompts.length; i++){
   let response = input.question(`\nWould you like to ${prompts[i]}? Y/N: `);
 
   if (response.toLowerCase()==='y'){
-        if (i===0){  
+      
+    if (i===0){  
 
       //Call 'printAll' here and pass in all necessary arguments.
-      printAll(astronauts, testTitles, scores); // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+      printAll(astronauts, testTitles, scores);
 
     } else if (i===1){
       for (let j = 0; j<testTitles.length; j++){
@@ -43,10 +44,10 @@ for (let i = 0; i < prompts.length; i++){
     } else {
       
       //Call 'randomSelect' to pick a spacewalker from the astronauts array.
-      let walker = randomSelect(astronauts); // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+      let walker = randomSelect(astronauts); 
       console.log(`${walker} is the next spacewalker.`); 
     }
-  } else {
-    console.log("Option skipped.");
+    } else {
+      console.log("Option skipped.");
   }
 }

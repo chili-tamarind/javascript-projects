@@ -6,7 +6,7 @@ describe("checkFive", function(){
     test("Descriptive feedback...", function() {
         //code here...
     }); 
-    */
+    */ 
 
     test("should return 'num is less than 5' when num < 5.", function() {        
         let output = checkFive(2);

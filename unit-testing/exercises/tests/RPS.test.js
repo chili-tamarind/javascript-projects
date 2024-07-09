@@ -1,6 +1,6 @@
 const test = require('../RPS.js');
 
-describe("checkFive", function(){
+describe("whoWon", function(){
     /*
     test("Descriptive feedback...", function() {
         //code here...

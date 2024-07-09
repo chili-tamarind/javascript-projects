@@ -1,5 +1,3 @@
-//npm install
-
 // The function checks to see if a number is greater than, less than, or equal to 5.
 function checkFive(num){
 
@@ -16,6 +14,4 @@ function checkFive(num){
     return result;
 }
 
-module.exports = {
-    checkFive: checkFive,
-};
+module.exports = checkFive;

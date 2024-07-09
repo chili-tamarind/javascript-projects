@@ -35,9 +35,13 @@ function printTestScores(index,test,students,scores){
   return;
 }
 
+//TODO: Export ONLY the printAll function!!!!!
+module.exports = printAll;
 
+/*
 module.exports = {
-  printAll: printAll,
-  printStudentScores: printStudentScores,
-  printTestScores: printTestScores,
+  printAll : printAll,
+  printStudentScores : printStudentScores,
+  printTestScores : printTestScores,
 };
+*/
