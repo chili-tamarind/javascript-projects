@@ -25,7 +25,6 @@ describe("Testing launchcode", function(){
     expect((launchcode.programsOffered).length).toBe(3);
   });
 
-
   //launchOutput()
   test("if number is ONLY divisible by 2, return 'Launch!'", function(){
     expect(launchcode.launchOutput(2)).toBe('Launch!');
