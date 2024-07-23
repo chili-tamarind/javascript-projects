@@ -31,15 +31,15 @@ class CrewCandidate {
         let check_average = this.average();
 
         if (check_average >= 90) {return 'Accepted';}
-        else if (check_average >= 89) {return 'Reserve';}
-        else if (check_average >= 79) {return 'Probationary';}
+        else if (check_average >= 80) {return 'Reserve';}
+        else if (check_average >= 70) {return 'Probationary';}
         else {return 'Rejected';}
     }
 }
 
-let bear = new CrewCandidate('Bubba Bear', 135, [88, 85, 90]);
-let maltese = new CrewCandidate('Merry Maltese', 1.5, [93, 88, 97]);
-let gator = new CrewCandidate( 'Glad Gator', 225, [75, 78, 62]);
+const bear = new CrewCandidate('Bubba Bear', 135, [88, 85, 90]);
+const maltese = new CrewCandidate('Merry Maltese', 1.5, [93, 88, 97]);
+const gator = new CrewCandidate( 'Glad Gator', 225, [75, 78, 62]);
 
 console.log(bear);
 console.log(maltese);
@@ -93,3 +93,15 @@ if (gator.average() < 90){
 
     console.log('Total tests taken to improve grade: ', counter_Reserve+counter_Accepted);
 }
+
+// Using the status instead
+
+let counter = 0;
+
+if (bear.average() < 90){
+    while (bear.status() !== 'Accepted'){
+        bear.addScore(100);
+        counter++;
+    }
+}
+console.log('Total tests taken to improve grade: ', counter_Reserve+counter_Accepted);
