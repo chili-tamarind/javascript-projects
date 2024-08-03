@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<title> Studio: HTTP and Forms </title>
+
+    <link rel = "stylesheet" type = "text/css" href = "styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+	
+	<script>		
+		let actions = {
+			google: " https://google.com/search",
+			duckDuckGo: " https://duckDuckGo.com",
+			bing: " https://bing.com/search",
+			ask: " https://ask.com/web",
+		}
+		
+		// TODO: create a handler
+		function setSearchEngine() {
+			//console.log("Moi moi");
+			
+			const engine_Selected = document.querySelector('input[name=engine]:checked');
+			const searchForm = document.getElementById('searchForm');
+            const query = document.getElementById('search_word');	
+
+            // Bonus mission Part 1 - Add validation
+            
+            // Option 1: Use window alert
+
+            // Option 2: Use an error box 
+            const errorBox = document.getElementById('error-box');
+            const errorMessage = document.getElementById('error-message');
+
+            if (query.value.trim() === "") { // The input for the text, check for non-empty
+                errorMessage.innerHTML = "You are missing a search word!";
+                errorMessage.style.visibility = "visible";
+                event.preventDefault();
+            } else if (!engine_Selected) {
+                errorMessage.innerHTML = "You need to select an engine!";
+                errorMessage.style.visibility = "visible";
+                event.preventDefault();
+            } else {
+                errorMessage.style.visibility = "hidden";}
+
+            let url = actions[engine_Selected.value];
+			searchForm.action = url;
+		}	
+		
+		window.addEventListener('load', function() {		
+			// TODO: register the handler		
+			const searchForm = document.getElementById('searchForm');			
+			searchForm.addEventListener("submit", setSearchEngine); // Listener is passive
+		});
+        
+	</script>
+</head>
+
+<body>	
+
+    <div id="search-bar">
+        <p id="search-header"> Search Me </p>
+
+        <form id="searchForm">
+    
+            <!-- TODO: add form elements -->
+            <!-- //https://www.w3schools.com/tags/att_a_target.asp -->
+        
+            <label> Search word <input type="text" id="search_word" name="q"></label>  <br><br>
+    
+            <label> <input type="radio" name="engine" value="google"> 		Google </label>
+            <label>	<input type="radio" name="engine" value="duckDuckGo"> 	DuckDuckGo</label>
+            <label> <input type="radio" name="engine" value="bing"> 		Bing </label>
+            <label> <input type="radio" name="engine" value="ask"> 			Ask </label>
+
+            <br><br>
+            <button id="submit" type="submit"> Go!</button>
+    
+        </form>
+
+        <!-- Bonus Mission -->
+        <div id="error-box">
+            <p id="error-message"> </p>
+        </div>
+
+    </div>	
+    
+</body>
+
+
+<!--
+Search engine 
+
+https://www.google.com/search?q=birb
+https://duckduckgo.com/?t=h_&q=birb&ia=web 
+https://www.bing.com/search?q=birb
+
+-->

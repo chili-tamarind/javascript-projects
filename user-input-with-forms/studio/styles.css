@@ -1,0 +1,77 @@
+/*/ Code Your Solution Below /*/
+
+/* ELEMENT */
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-image: url('eilon-beno-duck-wallpaper.jpg');
+    background-position: center;
+    background-size: 100vw;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    padding-top: 80px;
+    font-family: 'Roboto', sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button {
+    margin-top: 8px;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+form {
+    width: 95%;
+    margin: 0 auto;
+}
+
+/* CLASS */
+.radio-group {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle; 
+}
+
+/* ID */ 
+#form-title {
+    color: rgb(14, 136, 136);
+}
+
+#error-box {
+    visibility: hidden;
+    width: 60vw;
+    height: auto;
+    background-color: whitesmoke;
+    opacity: 50;
+    margin: 0 auto;
+    padding: 20px;
+    display: block;
+    text-align: center;
+}
+
+#error-message {
+    font-size: 10pt;
+    color: red;
+    margin: 0 auto;
+    background-color: rgb(214, 188, 188);
+}
+
+#search-bar {
+    width: 60vw;
+    height: auto;
+    background-color: whitesmoke;
+    opacity: 50;
+    margin: 20px auto;
+    padding: 20px;
+    display: block;
+    text-align: center;
+}
+
+#search-header {
+    width: 90%;
+    font-size: 3vw;
+    font-weight: bold;
+    color: rgb(44, 180, 204);
+    margin: 0px auto 15px auto;
+}

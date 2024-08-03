@@ -1,0 +1,45 @@
+/* ELEMENT */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url(galaxy.jpg);
+    flex: auto;
+}
+
+p {
+    background-color: rgb(241, 230, 239);
+}
+
+h1 {
+    color: aliceblue;
+}
+
+/* CLASS */
+.avatar {
+    border-radius: 50%;
+    width: 150px;
+    float:right;
+}
+
+.astronaut { 
+    border: 2px solid rgb(114, 13, 106);
+    background-color: rgb(241, 230, 239);
+    display: flex;
+    justify-content: space-between;
+    width: 450px;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.active{
+    color: rgb(17, 128, 17);
+    font-weight: bold;
+}
+
+/* ID */
+#astronaut-count{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 15pt;
+}

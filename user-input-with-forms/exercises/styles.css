@@ -1,8 +1,12 @@
 /*/ Code Your Solution Below /*/
 
 /* ELEMENT */
+body {
+    font-family: 'Roboto', sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva; 
+}
+
 label {
-    color: rgb(255, 0, 221);
+    color: rgb(6, 96, 119);
     margin-bottom: 7px;
     font-weight: bold;
 }

@@ -3,7 +3,6 @@
 <head>
 	<meta charset="utf-8">
 	<title> Studio: HTTP and Forms </title>
-	<link rel = "stylesheet" type = "text/css" href = "styles.css" />
 	
 	<script>		
 		let actions = {
@@ -16,12 +15,26 @@
 		// TODO: create a handler
 		function setSearchEngine() {
 			//console.log("Moi moi");
-			//event.preventDefault();
 			
 			const engine_Selected = document.querySelector('input[name=engine]:checked');
-			const searchForm = document.getElementById('searchForm');	
-			
-			let url = actions[engine_Selected.value];
+			const searchForm = document.getElementById('searchForm');
+            const query = document.getElementById('search_word');	
+
+            // Bonus mission Part 1 - Add validation
+
+            // Option 1: Use window alert
+
+			if (query.value.trim() === "") { // The input for the text, check for non-empty
+                window.alert("You are missing a search word!");
+                event.preventDefault();
+            } else if (!engine_Selected) {
+                window.alert("You need to select an engine!");
+                event.preventDefault();
+            }
+
+            // Option 2: Use an error box 
+
+            let url = actions[engine_Selected.value];
 			searchForm.action = url;
 		}	
 		
@@ -40,7 +53,7 @@
 		<!-- TODO: add form elements -->
 		<!-- //https://www.w3schools.com/tags/att_a_target.asp -->
 	
-		<label> Search word <input type="text" name="q"></label>  <br><br>
+		<label> Search word <input type="text" id="search_word" name="q"></label>  <br><br>
 
 		<label> <input type="radio" name="engine" value="google"> 		Google </label>
 		<label>	<input type="radio" name="engine" value="duckDuckGo"> 	DuckDuckGo</label>

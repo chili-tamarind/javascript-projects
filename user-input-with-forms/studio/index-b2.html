@@ -3,7 +3,6 @@
 <head>
 	<meta charset="utf-8">
 	<title> Studio: HTTP and Forms </title>
-	<link rel = "stylesheet" type = "text/css" href = "styles.css" />
 	
 	<script>		
 		let actions = {
@@ -16,12 +15,28 @@
 		// TODO: create a handler
 		function setSearchEngine() {
 			//console.log("Moi moi");
-			//event.preventDefault();
 			
 			const engine_Selected = document.querySelector('input[name=engine]:checked');
-			const searchForm = document.getElementById('searchForm');	
-			
-			let url = actions[engine_Selected.value];
+			const searchForm = document.getElementById('searchForm');
+            const query = document.getElementById('search_word');	
+
+            // Bonus mission Part 1 - Add validation
+            
+            // Option 1: Use window alert
+
+            // Option 2: Use an error box 
+            const errorBox = document.getElementById('error-box');
+            const errorMessage = document.getElementById('error-message');
+
+            if (query.value.trim() === "") { // The input for the text, check for non-empty
+                errorMessage.innerHTML = "You are missing a search word!";
+                event.preventDefault();
+            } else if (!engine_Selected) {
+                errorMessage.innerHTML = "You need to select an engine!";
+                event.preventDefault();
+            }
+
+            let url = actions[engine_Selected.value];
 			searchForm.action = url;
 		}	
 		
@@ -30,6 +45,7 @@
 			const searchForm = document.getElementById('searchForm');			
 			searchForm.addEventListener("submit", setSearchEngine); // Listener is passive
 		});
+        
 	</script>
 </head>
 
@@ -40,7 +56,7 @@
 		<!-- TODO: add form elements -->
 		<!-- //https://www.w3schools.com/tags/att_a_target.asp -->
 	
-		<label> Search word <input type="text" name="q"></label>  <br><br>
+		<label> Search word <input type="text" id="search_word" name="q"></label>  <br><br>
 
 		<label> <input type="radio" name="engine" value="google"> 		Google </label>
 		<label>	<input type="radio" name="engine" value="duckDuckGo"> 	DuckDuckGo</label>
@@ -48,9 +64,14 @@
 		<label> <input type="radio" name="engine" value="ask"> 			Ask </label>
 
 		<br><br>
-		<button id="submit" type="submit"> Go!</button>
+		<button id="submit" type="submit"> Go!</button>        
 
 	</form>
+
+		<!-- Bonus Mission -->
+		<div id="error-box">
+			<p id="error-message"> </p>
+		</div>
 
 </body>
 
