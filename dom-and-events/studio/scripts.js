@@ -16,8 +16,7 @@ function init () {
     // Values
     const shuttleBackground = document.getElementById("shuttleBackground");
     const spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
-    const flightStatus = document.getElementById("flightStatus");
-    
+    const flightStatus = document.getElementById("flightStatus");    
 
     // Image
     const rocket = document.getElementById("rocket");
@@ -27,7 +26,6 @@ function init () {
     let rocketAltitude = 0;
     let rocketImageX = 0;
     let rocketImageY = 0;
-    
     
         // When the “Take off” button is clicked
         takeoff.addEventListener('click', event => {

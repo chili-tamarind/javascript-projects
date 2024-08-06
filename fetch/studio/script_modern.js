@@ -24,7 +24,6 @@ window.addEventListener('load', function() {
         const astronautCount  = document.getElementById('astronaut-count');
         astronautCount.innerHTML = `All ${data.length} floating in space, Astronaut's silent ballet, Limitless wonder.!`;
 
-
         // Loop through all the data
         for(let i=0; i<data.length; i++){
             let astronaut = data[i];
