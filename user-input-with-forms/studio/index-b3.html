@@ -19,9 +19,11 @@
 		function setSearchEngine() {
 			//console.log("Moi moi");
 			
-			const engine_Selected = document.querySelector('input[name=engine]:checked');
+			const engine_selected = document.querySelector('input[name=engine]:checked');
 			const searchForm = document.getElementById('searchForm');
             const query = document.getElementById('search_word');	
+
+            let errorCounter = 0;
 
             // Bonus mission Part 1 - Add validation
             
@@ -30,19 +32,28 @@
             // Option 2: Use an error box 
             const errorBox = document.getElementById('error-box');
             const errorMessage = document.getElementById('error-message');
+                    errorMessage.style.padding = "20px";
+                    errorMessage.style.fontSize = "22px";
+                    errorMessage.innerHTML = "";
 
             if (query.value.trim() === "") { // The input for the text, check for non-empty
-                errorMessage.innerHTML = "You are missing a search word!";
+                errorMessage.innerHTML += " You are missing a search word!";
+                errorMessage.style.visibility = "visible";                
+                errorCounter++;
+            }
+            
+            if (!engine_selected) {
+                errorMessage.innerHTML += " <br> You need to select an engine!";
                 errorMessage.style.visibility = "visible";
                 event.preventDefault();
-            } else if (!engine_Selected) {
-                errorMessage.innerHTML = "You need to select an engine!";
-                errorMessage.style.visibility = "visible";
-                event.preventDefault();
-            } else {
-                errorMessage.style.visibility = "hidden";}
+                errorCounter++;
+            }
+            
+            if (errorCounter === 0) {
+                errorMessage.style.visibility = "hidden";
+            }
 
-            let url = actions[engine_Selected.value];
+            let url = actions[engine_selected.value];
 			searchForm.action = url;
 		}	
 		

@@ -4,11 +4,11 @@
 body {
     overflow-x: hidden;
     overflow-y: scroll;
-    background-image: url('eilon-beno-duck-wallpaper.jpg');
+    background-image: url('chicken.jpg');
     background-position: center;
     background-size: 100vw;
     background-color: white;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-attachment: fixed;
     text-align: center;
     padding-top: 80px;
@@ -54,7 +54,6 @@ form {
     font-size: 10pt;
     color: red;
     margin: 0 auto;
-    background-color: rgb(214, 188, 188);
 }
 
 #search-bar {
